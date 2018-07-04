@@ -2,6 +2,8 @@
 
 This extension lets you set a theme per workspace. This is a nice way to distinguish different workspaces you may have open at the same time.
 
+(docs/example.png)
+
 ## Features
 
 - Lets you easily select a theme
