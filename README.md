@@ -17,9 +17,13 @@ Instead of the command palette, you can also invoke the dialog with the keyboard
 
 ## Known Issues
 
-For some reason, only externally installed themes seem to work.
+For some reason, only themes installed as extensions seem to work.
 
 ## Release Notes
+
+### 1.0.1
+
+Added example image
 
 ### 1.0.0
 
