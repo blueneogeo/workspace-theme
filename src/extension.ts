@@ -11,8 +11,13 @@ export function activate(context: vscode.ExtensionContext) {
             .map(e=>e.themes)
         const themes = [].concat(...themeArrays) as any[]
         // show all themes
-        const options = themes.map(theme=>theme.label)
-        const reset = 'Restore Default Theme'
+        const options = themes.map(function(theme) {
+            return {
+                id: theme.id ? theme.id : theme.label,
+                label: theme.label
+            }
+        })
+        const reset = { id: 'reset', label: 'Restore Default Theme' }
         options.unshift(reset)
         vscode.window.showQuickPick(options, {
             placeHolder: 'Select a theme for this workspace'
@@ -21,14 +26,14 @@ export function activate(context: vscode.ExtensionContext) {
                 item => {
                     // handle selection
                     const workbenchConfig = vscode.workspace.getConfiguration()
-                    if(item == reset) {
+                    if(item.id == 'reset') {
                         workbenchConfig.update('workbench.colorTheme', undefined)
                         // vscode.window.showInformationMessage('Workspace theme set to default')
                     } else {
-                        workbenchConfig.update('workbench.colorTheme', item)
+                        workbenchConfig.update('workbench.colorTheme', item.id)
                         // vscode.window.showInformationMessage('Selected workspace theme: ' + item)
                     }
-                }, 
+                },
                 error => {
                     vscode.window.showErrorMessage('Could not set workspace theme ' + error)
                 }
