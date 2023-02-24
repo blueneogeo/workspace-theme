@@ -2,7 +2,7 @@
     "name": "workspacetheme",
     "displayName": "Workspace Theme",
     "description": "Set the theme for your current workspace",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "publisher": "sagittarian",
     "repository": {
         "url": "https://github.com/blueneogeo/workspace-theme",

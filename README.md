@@ -7,7 +7,8 @@ This extension lets you set a theme per workspace. This is a nice way to disting
 ## Features
 
 - Lets you easily select a theme
-- Allows to return to the default
+- Allows to return to the default theme
+- Preview the new theme while selecting
 
 ## Usage
 
@@ -20,6 +21,10 @@ Instead of the command palette, you can also invoke the dialog with the keyboard
 For some reason, only themes installed as extensions seem to work.
 
 ## Release Notes
+
+### 1.1.0
+
+Added preview feature when selecting workspace themes
 
 ### 1.0.1
 
