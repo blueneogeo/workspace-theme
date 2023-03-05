@@ -16,11 +16,11 @@ Use Command+Shift+P and select "Set Workspace Theme". Then select a theme to app
 
 Instead of the command palette, you can also invoke the dialog with the keyboard shortcut "Cmd+K Cmd+Shift+T".
 
-## Known Issues
-
-For some reason, only themes installed as extensions seem to work.
-
 ## Release Notes
+
+### 1.2.0
+
+Sort the themes in the popup by light / dark
 
 ### 1.1.0
 
