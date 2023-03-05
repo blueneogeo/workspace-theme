@@ -3,12 +3,19 @@ import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('extension.setWorkspaceTheme', () => {
+		// get current theme
+		const config = vscode.workspace.getConfiguration('workbench')
+		const currentThemeName = config.get<string>('colorTheme')
+		console.log('current', currentThemeName)		
+
 		// find all themes
 		const themeArrays = vscode.extensions.all
 			.map(e => e.packageJSON.contributes)
 			.filter(e => { return !!(e && e.themes) })
 			.map(e => e.themes)
 		const themes = [].concat(...themeArrays) as any[]
+
+		// find the current theme 
 
 		// log all themes
 		console.log('themes:', themes)
@@ -32,6 +39,9 @@ export function activate(context: vscode.ExtensionContext) {
 			...groupedThemeOptions.Light, 
 			...groupedThemeOptions.Dark,
 		]
+
+		const currentThemeOptions = themesOptions.find(theme => theme.label === currentThemeName)
+		if(currentThemeOptions) options.unshift(currentThemeOptions)
 
 		let timeout: ReturnType<typeof setTimeout>;
 
@@ -61,7 +71,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		vscode.window.showQuickPick(options, {
 			placeHolder: 'Select a theme for this workspace',
-			onDidSelectItem: setWorkspaceTheme
+			onDidSelectItem: setWorkspaceTheme,
 		})
 			.then(
 				setWorkspaceTheme,

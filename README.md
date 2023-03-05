@@ -18,6 +18,10 @@ Instead of the command palette, you can also invoke the dialog with the keyboard
 
 ## Release Notes
 
+### 1.3.0
+
+Added the currently selected theme at the top of the themes popup
+
 ### 1.2.0
 
 Sort the themes in the popup by light / dark
